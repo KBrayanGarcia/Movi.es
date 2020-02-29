@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+h1{
+    font-size: 40px;
+}
+
+/*------------------------- header --------------------------*/
+.grid-nav{
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.logo{
+    display: flex;
+}
+.logo-imagen{
+    width: 3.125em;
+    height: 3.125em;
+}
+.title{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10px;
+    color: white;
+    text-shadow: 0px 0px 3px #FF0000;
+}
+.form-busqueda input{
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #bcbcbc;
+    width: 400px;
+}
+.perfil{
+    display: flex;
+}
+.nombre-perfil{
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+.imagen-perfil{
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+
