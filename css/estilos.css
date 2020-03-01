@@ -86,8 +86,9 @@ h3{
 .grid-nav {
   justify-items: center;
   align-items: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-around;
+
 }
 
 .logo {
