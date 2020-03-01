@@ -72,7 +72,7 @@ h3{
 /*------------------------- header --------------------------*/
 .grid-global {
   display: grid;
-  grid-template-columns: minmax(100px, 100px) 1fr;
+  grid-template-columns: minmax(100px, 150px) 1fr;
   grid-template-rows: minmax(70px, 70px) 1fr;
   grid-template-areas: "header header"
                        "sidebar peliculas";
@@ -81,6 +81,8 @@ h3{
 
 .header {
   grid-area: header;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53); 
+box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
 }
 
 .grid-nav {
@@ -88,7 +90,6 @@ h3{
   align-items: center;
   display: flex;
   justify-content: space-around;
-
 }
 
 .logo {
@@ -109,6 +110,7 @@ h3{
 }
 
 .form-busqueda input {
+  box-sizing: border-box;
   padding: 10px 15px;
   border-radius: 10px;
   border: 1px solid #bcbcbc;
@@ -146,7 +148,7 @@ h3{
 }
 
 .elemento i {
-  font-size: 1.875em;
+  font-size: 3.125rem;
 }
 
 /*----------------- Caja De peliculas ----------------------*/
@@ -154,7 +156,7 @@ h3{
   padding: 15px;
 }
 .titulo-seccion{
-  padding: 15px 0;
+  padding: 0 0 15px 0;
 }
 .seccion-grid {
   display: grid;
@@ -169,7 +171,8 @@ h3{
 .pelicula{
   background-image: url('../img/pelicula.jpg');
   background-position: center center;
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
   color: white
@@ -179,4 +182,62 @@ h3{
   padding: 10px 15px;
   width: 100%;
   box-sizing: border-box;
+}
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width:425px ) {
+  body{
+    font-size: 12px;
+  }
+  .grid-global{
+    grid-template-columns: 100%;
+    grid-template-rows: 150px 1fr 1fr;
+    grid-template-areas: "header"
+                         "peliculas"
+                         "sidebar";
+  }
+  .header{
+    padding: 20px 0;
+  }
+  .barra-busqueda input{
+    width: 20em;
+  }
+  .perfil{
+    display: none;
+  }
+  .grid-nav{
+    flex-direction: column;
+    height: 100%;
+  }
+  .seccion-grid{
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3,minmax(200px, 300px));
+  }
+}
+@media (min-width: 426px ) and (max-width:768px){
+  body{
+    font-size: 14px;
+  }
+  .perfil{
+    display: none;
+  }
+  .grid-nav{
+    flex-direction: column;
+    height: 100%;
+  }
+  .grid-global{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 150px 1fr 1fr;
+    grid-template-areas: "header header"
+                         "peliculas peliculas"
+                         "sidebar sidebar";
+  }
+  .seccion-grid{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2,minmax(200px, 300px));
+  }
+}
+@media (min-width: 769px) and (max-width: 1265px) {
+  body{
+    font-size: 14px;
+  }
 }
