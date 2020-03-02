@@ -54,15 +54,20 @@ h6 {
     margin: 0;
 }
 h1{
-    font-size: 40px;
+    font-size: 2.5em;
 }
-
+a{
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
 /*------------------------- header --------------------------*/
 .grid-nav{
     justify-items: center;
     align-items: center;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-around;
 }
 .logo{
     display: flex;
@@ -82,7 +87,7 @@ h1{
     padding: 10px 15px;
     border-radius: 10px;
     border: 1px solid #bcbcbc;
-    width: 400px;
+    width: 25em;
 }
 .perfil{
     display: flex;
@@ -93,11 +98,38 @@ h1{
     margin-right: 10px;
 }
 .imagen-perfil{
-    width: 60px;
-    height: 60px;
+    width: 3.75em;
+    height: 3.75em;
     margin-right: 10px;
     border-radius: 50%;
     border: 1px solid black;
+}
+/* ---------------Sidebar----------------------- */
+.sidebar{
+  background-color: red;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+}
+.sidebar i{
+  font-size: 1.875em;
+}
+.sidebar a p{
+  margin-top: 10px;
+}
+.sidebar a{
+  color: white;
+  display: inline-block;
+  padding: 10px 0;
+}
+/* Con esto le estamos diciendo que nuestro 4to enlace
+tome todo el margin disponible hacia arriba y se alinea hasta abajo */
+.sidebar a:nth-of-type(4){
+  margin-top: auto;
+}
+.sidebar a:hover{
+  background-color: #aa0004;
 }
 
 
