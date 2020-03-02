@@ -56,11 +56,32 @@ h6 {
 h1{
     font-size: 2.5em;
 }
+h2{
+  font-size: 2.1875em;
+}
+h3{
+  font-size: 1.875em;
+}
+h4{
+  font-size: 1.5625em;
+}
+h5{
+  font-size: 1.25em;
+}
+h6{
+  font-size: 0.9375em;
+}
 a{
   text-decoration: none;
 }
 p{
   margin: 0;
+}
+figure{
+  margin: 0;
+}
+img{
+  width: 100%;
 }
 /*------------------------- header --------------------------*/
 .grid-nav{
@@ -106,7 +127,7 @@ p{
 }
 /* ---------------Sidebar----------------------- */
 .sidebar{
-  background-color: red;
+  background-color: #1c8ce8;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -129,7 +150,35 @@ tome todo el margin disponible hacia arriba y se alinea hasta abajo */
   margin-top: auto;
 }
 .sidebar a:hover{
-  background-color: #aa0004;
+  background-color: #093d70;
+}
+/* -------------------Caja de peliculas------------------ */
+.seccion-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.75em, 25em));
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  gap: 1.25em;
+}
+.seccion{
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+.titulo-seccion{
+  margin-bottom: 10px;
+}
+.pelicula{
+  background-color: #1c8ce8;
+  color: white;
+}
+.detalles-pelicula{
+  padding: 10px;
+}
+.titulo-pelicula{
+  margin-top: 5px;
+}
+.texto-pelicula{
+  margin-top: 5px;
 }
 
 
