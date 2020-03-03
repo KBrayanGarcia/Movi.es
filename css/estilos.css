@@ -58,9 +58,8 @@ h5,
 h6 {
   margin: 0;
 }
-
-h1 {
-  font-size: 2.5em;
+h1{
+    font-size: 2.5em;
 }
 h2{
   font-size: 2.1875em;
@@ -68,39 +67,49 @@ h2{
 h3{
   font-size: 1.875em;
 }
+h4{
+  font-size: 1.5625em;
+}
+h5{
+  font-size: 1.25em;
+}
+h6{
+  font-size: 0.9375em;
+}
+a{
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
+figure{
+  margin: 0;
+}
+img{
+  width: 100%;
+}
+/* Grid globlal*/
+.grid-global{
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: 
+  "header header"
+  "sidebar peliculas";
+  gap: 20px;
+}
 
 /*------------------------- header --------------------------*/
-.grid-global {
-  display: grid;
-  grid-template-columns: minmax(100px, 150px) 1fr;
-  grid-template-rows: minmax(70px, 70px) 1fr;
-  grid-template-areas: "header header"
-                       "sidebar peliculas";
-  height: 100vh;
-}
-
-.header {
+.header{
+  align-self: center;
   grid-area: header;
-  -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53); 
-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
 }
-
-.grid-nav {
-  justify-items: center;
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
+.grid-nav{
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
-
-.logo {
-  display: flex;
-}
-
-.logo-imagen {
-  width: 3.125em;
-  height: 3.125em;
-}
-
 .title {
   display: flex;
   align-items: flex-end;
@@ -120,11 +129,11 @@ box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
 .perfil {
   display: flex;
 }
-
-.nombre-perfil {
-  display: flex;
-  align-items: flex-end;
-  margin-right: 10px;
+.form-busqueda input{
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #bcbcbc;
+    width: 25em;
 }
 
 .imagen-perfil {
@@ -146,98 +155,98 @@ box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
   justify-content: space-between;
   grid-area: sidebar;
 }
+.imagen-perfil{
+    width: 3.75em;
+    height: 3.75em;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+/* ---------------Sidebar----------------------- */
+.sidebar{
+  grid-area: sidebar;
+  background-color: #1c8ce8;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 
-.elemento i {
-  font-size: 3.125rem;
 }
-
-/*----------------- Caja De peliculas ----------------------*/
-.seccion{
-  padding: 15px;
+.sidebar i{
+  font-size: 1.875em;
 }
-.titulo-seccion{
-  padding: 0 0 15px 0;
+.sidebar a p{
+  margin-top: 10px;
 }
-.seccion-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-  grid-template-rows: minmax(200px, 300px);
-  gap: 20px;
+.sidebar a{
+  color: white;
+  display: inline-block;
+  padding: 10px 0;
 }
-
-.peliculas {
+/* Con esto le estamos diciendo que nuestro 4to enlace
+tome todo el margin disponible hacia arriba y se alinea hasta abajo */
+.sidebar a:nth-of-type(4){
+  margin-top: auto;
+}
+.sidebar a:hover{
+  background-color: #093d70;
+}
+/* -------------------Caja de peliculas------------------ */
+.peliculas{
   grid-area: peliculas;
 }
+.seccion-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(12.5em, 1fr));
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  gap: 1.25em;
+}
+.seccion{
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+.titulo-seccion{
+  margin-bottom: 10px;
+}
 .pelicula{
-  background-image: url('../img/pelicula.jpg');
-  background-position: center center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: flex-end;
-  color: white
+  background-color: #1c8ce8;
+  color: white;
 }
-.detail-pelicula{
-  background-color: rgba(0, 0, 255, .7);
-  padding: 10px 15px;
-  width: 100%;
-  box-sizing: border-box;
+.detalles-pelicula{
+  padding: 10px;
 }
-/* // Small devices (landscape phones, 576px and up) */
-@media (max-width:425px ) {
+.titulo-pelicula{
+  margin-top: 5px;
+}
+.texto-pelicula{
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
   body{
     font-size: 12px;
   }
   .grid-global{
-    grid-template-columns: 100%;
-    grid-template-rows: 150px 1fr 1fr;
-    grid-template-areas: "header"
-                         "peliculas"
-                         "sidebar";
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header "
+    "peliculas"
+    "sidebar";
   }
-  .header{
-    padding: 20px 0;
+  /* header */
+  .logo .title{
+    margin-bottom: 10px;
+  }
+  .grid-nav{
+    flex-direction: column;
+}
+  .perfil{
+    display: none;
   }
   .barra-busqueda input{
-    width: 20em;
+    width: 240px;
   }
-  .perfil{
-    display: none;
-  }
-  .grid-nav{
-    flex-direction: column;
-    height: 100%;
-  }
+  /* Caja de peliculas */
   .seccion-grid{
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(3,minmax(200px, 300px));
-  }
-}
-@media (min-width: 426px ) and (max-width:768px){
-  body{
-    font-size: 14px;
-  }
-  .perfil{
-    display: none;
-  }
-  .grid-nav{
-    flex-direction: column;
-    height: 100%;
-  }
-  .grid-global{
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 150px 1fr 1fr;
-    grid-template-areas: "header header"
-                         "peliculas peliculas"
-                         "sidebar sidebar";
-  }
-  .seccion-grid{
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2,minmax(200px, 300px));
-  }
-}
-@media (min-width: 769px) and (max-width: 1265px) {
-  body{
-    font-size: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(21.875em, 1fr));
   }
 }
