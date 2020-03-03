@@ -133,8 +133,20 @@ img{
   width: 25em;
 }
 
-.perfil {
+.perfil{
   display: flex;
+}
+.nombre-perfil{
+  display: flex;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+.imagen-perfil{
+  width: 3.75em;
+  height: 3.75em;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 .form-busqueda input{
     padding: 10px 15px;
