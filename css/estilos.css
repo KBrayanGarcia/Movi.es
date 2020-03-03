@@ -87,12 +87,13 @@ img{
 .grid-global{
   display: grid;
   grid-template-columns: 150px 1fr;
-  grid-template-rows: 100px;
-  grid-auto-rows: 1fr;
+  grid-template-rows: 100px 1fr;
   grid-template-areas: 
   "header header"
   "sidebar peliculas";
+  gap: 20px;
 }
+
 /*------------------------- header --------------------------*/
 .header{
   align-self: center;
@@ -173,7 +174,7 @@ tome todo el margin disponible hacia arriba y se alinea hasta abajo */
 }
 .seccion-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18.75em, 31.25em));
+  grid-template-columns: repeat(3, minmax(12.5em, 1fr));
   grid-template-rows: auto;
   grid-auto-rows: auto;
   gap: 1.25em;
@@ -198,5 +199,32 @@ tome todo el margin disponible hacia arriba y se alinea hasta abajo */
 .texto-pelicula{
   margin-top: 5px;
 }
-
-
+@media (max-width: 768px) {
+  body{
+    font-size: 12px;
+  }
+  .grid-global{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header "
+    "peliculas"
+    "sidebar";
+  }
+  /* header */
+  .logo .title{
+    margin-bottom: 10px;
+  }
+  .grid-nav{
+    flex-direction: column;
+}
+  .perfil{
+    display: none;
+  }
+  .barra-busqueda input{
+    width: 240px;
+  }
+  /* Caja de peliculas */
+  .seccion-grid{
+    grid-template-columns: repeat(auto-fill, minmax(21.875em, 1fr));
+  }
+}
