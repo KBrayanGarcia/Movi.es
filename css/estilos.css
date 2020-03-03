@@ -110,6 +110,13 @@ img{
     display: flex;
     justify-content: space-around;
 }
+.logo{
+  display: flex;
+}
+.logo-imagen{
+  width: 3.125em;
+  height: 3.125em;
+}
 .title {
   display: flex;
   align-items: flex-end;
